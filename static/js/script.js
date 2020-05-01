@@ -56,7 +56,7 @@ function action_trigger() {
 
     // send an event to the bot, so that bot can start the conversation by greeting the user
     $.ajax({
-        url: `http://localhost:5005/conversations/${user_id}/execute`,
+        url: `http://3.6.134.210:5005/conversations/${user_id}/execute`,
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({ "name": action_name, "policy": "MappingPolicy", "confidence": "0.98" }),
@@ -159,7 +159,7 @@ function send(message) {
 	data.append("sender","pradip")
 	data.append("metadata","new metadata")
     $.ajax({
-        url: 'http://localhost:5005/webhooks/chatroom/webhook',
+        url: 'http://3.6.134.210:5005/webhooks/chatroom/webhook',
 		type: 'POST',
 		contentType: false,
 		cache: false,
