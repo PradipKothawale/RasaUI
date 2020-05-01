@@ -30,6 +30,8 @@ $(document).ready(function() {
     //global variables
     action_name = "action_greet_user";
     user_id = "pradip";
+    var convsersation_id = '';
+    conversation_id = Math.random();
 
     // if you want the bot to start the conversation
     action_trigger();
@@ -56,7 +58,7 @@ function action_trigger() {
 
     // send an event to the bot, so that bot can start the conversation by greeting the user
     $.ajax({
-        url: `http://3.6.134.210:5005/conversations/${user_id}/execute`,
+        url: `http://3.6.134.210:5005/conversations/${conversation_id}/execute`,
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({ "name": action_name, "policy": "MappingPolicy", "confidence": "0.98" }),
@@ -156,7 +158,7 @@ function send(message) {
 
     var data = new FormData()
 	data.append("message", message)
-	data.append("sender","pradip")
+	data.append("sender", conversation_id)
 	data.append("metadata","new metadata")
     $.ajax({
         url: 'http://3.6.134.210:5005/webhooks/chatroom/webhook',
