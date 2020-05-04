@@ -31,10 +31,11 @@ $(document).ready(function() {
     action_name = "action_greet_user";
     user_id = "pradip";
     var convsersation_id = '';
-    conversation_id = Math.random();
+    conversation_id = new Date();
 
     // if you want the bot to start the conversation
-    action_trigger();
+    // action_trigger();
+    send("/restart");
 
 })
 
@@ -175,8 +176,8 @@ function send(message) {
                 $("#userInput").prop('disabled', false);
 
                 //if you want the bot to start the conversation after restart
-                action_trigger();
-                return;
+                // action_trigger();
+                // return;
             }
             setBotResponse(botResponse);
 
@@ -184,16 +185,17 @@ function send(message) {
         error: function(xhr, textStatus, errorThrown) {
 
             if (message.toLowerCase() == '/restart') {
-                //$("#userInput").prop('disabled', false);
+                $("#userInput").prop('disabled', false);
 
                 //if you want the bot to start the conversation after the restart action.
-                action_trigger();
-                return;
+                // action_trigger();
+                // return;
+                setBotResponse(botResponse);
+            } else {
+                // if there is no response from rasa server
+                setBotResponse("");
+                console.log("Error from bot end: ", textStatus);
             }
-
-            // if there is no response from rasa server
-            setBotResponse("");
-            console.log("Error from bot end: ", textStatus);
         }
     });
 }
