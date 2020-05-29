@@ -11,13 +11,13 @@ def hello():
 def hello_docs():
     return render_template('index_doc.html')
 
-@app.route("/send_recieve")
-def send_recieve():
-    return render_template('send_and_recieve_message.html')
+@app.route("/send_receive")
+def send_receive():
+    return render_template('send_and_receive_message.html')
 
-@app.route("/send_recieve_examples")
-def send_recieve_examples():
-    return render_template('send_and_recieve_message_examples.html')
+@app.route("/send_receive_examples")
+def send_receive_examples():
+    return render_template('send_and_receive_message_examples.html')
 
 @app.route("/health")
 def health():
