@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Send or Recieve Message Examples API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Send or Recieve Message Examples API</h1>
+
+      <div class="article">
+        <h3>POST /webhooks/chatroom/webhook</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: multipart/form-data</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://new-stage.bidwheelz.com:5005/webhooks/chatroom/webhook</pre>
+
+          <h4>Body</h4>
+            <pre class="request headers">sender: pradip
+message: &lt;message&gt </pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json
+Connection: keep-alive
+Keep-Alive: 5
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 220</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body with Document option</h4>
+              <pre class="response body">
+[
+    {
+        "recipient_id": "pradip",
+        "text": "Can you upload the RC copy of the car?"
+    },
+    {
+        "recipient_id": "pradip",
+        "custom": {
+            "name": "Document",
+            "payload": "true"
+        }
+    }
+]
+</pre>
+
+<h4>Body with AutoComplete option</h4>
+              <pre class="response body">
+[
+    {
+        "recipient_id": "pradip",
+        "text": "What is your car brand?"
+    },
+    {
+        "recipient_id": "pradip",
+        "custom": {
+            "name": "AutoComplete",
+            "payload": [
+                {
+                    "id": 29,
+                    "value": "ASHOK LEYLAND",
+                    "label": "ASHOK LEYLAND"
+                },
+                {
+                    "id": 31,
+                    "value": "ASTON MARTIN",
+                    "label": "ASTON MARTIN"
+                },
+                {
+                    "id": 8,
+                    "value": "AUDI",
+                    "label": "AUDI"
+                },
+                {
+                    "id": 38,
+                    "value": "BAJAJ",
+                    "label": "BAJAJ"
+                },
+                {
+                    "id": 2,
+                    "value": "BMW",
+                    "label": "BMW"
+                },
+                {
+                    "id": 34,
+                    "value": "BUGATTI",
+                    "label": "BUGATTI"
+                },
+                {
+                    "id": 28,
+                    "value": "CHEVROLET",
+                    "label": "CHEVROLET"
+                },
+                {
+                    "id": 15,
+                    "value": "DATSUN",
+                    "label": "DATSUN"
+                },
+                {
+                    "id": 39,
+                    "value": "Dc",
+                    "label": "Dc"
+                },
+                {
+                    "id": 35,
+                    "value": "FERRARI",
+                    "label": "FERRARI"
+                },
+                {
+                    "id": 18,
+                    "value": "FIAT",
+                    "label": "FIAT"
+                },
+                {
+                    "id": 23,
+                    "value": "FORCE",
+                    "label": "FORCE"
+                },
+                {
+                    "id": 11,
+                    "value": "FORD",
+                    "label": "FORD"
+                },
+                {
+                    "id": 3,
+                    "value": "HONDA",
+                    "label": "HONDA"
+                },
+                {
+                    "id": 4,
+                    "value": "HYUNDAI",
+                    "label": "HYUNDAI"
+                },
+                {
+                    "id": 36,
+                    "value": "ISUZU",
+                    "label": "ISUZU"
+                },
+                {
+                    "id": 5,
+                    "value": "JAGUAR",
+                    "label": "JAGUAR"
+                },
+                {
+                    "id": 30,
+                    "value": "JEEP",
+                    "label": "JEEP"
+                },
+                {
+                    "id": 33,
+                    "value": "LAMBORGHINI",
+                    "label": "LAMBORGHINI"
+                },
+                {
+                    "id": 19,
+                    "value": "LAND ROVER",
+                    "label": "LAND ROVER"
+                },
+                {
+                    "id": 32,
+                    "value": "LEXUS",
+                    "label": "LEXUS"
+                },
+                {
+                    "id": 9,
+                    "value": "MAHINDRA",
+                    "label": "MAHINDRA"
+                },
+                {
+                    "id": 6,
+                    "value": "MARUTI SUZUKI",
+                    "label": "MARUTI SUZUKI"
+                },
+                {
+                    "id": 26,
+                    "value": "MASERATI",
+                    "label": "MASERATI"
+                },
+                {
+                    "id": 16,
+                    "value": "MERCEDES-BENZ",
+                    "label": "MERCEDES-BENZ"
+                },
+                {
+                    "id": 24,
+                    "value": "MINI",
+                    "label": "MINI"
+                },
+                {
+                    "id": 22,
+                    "value": "MITSUBISHI",
+                    "label": "MITSUBISHI"
+                },
+                {
+                    "id": 14,
+                    "value": "NISSAN",
+                    "label": "NISSAN"
+                },
+                {
+                    "id": 21,
+                    "value": "PORSCHE",
+                    "label": "PORSCHE"
+                },
+                {
+                    "id": 37,
+                    "value": "PREMIER",
+                    "label": "PREMIER"
+                },
+                {
+                    "id": 12,
+                    "value": "RENAULT",
+                    "label": "RENAULT"
+                },
+                {
+                    "id": 20,
+                    "value": "ROLLS-ROYCE",
+                    "label": "ROLLS-ROYCE"
+                },
+                {
+                    "id": 17,
+                    "value": "SKODA",
+                    "label": "SKODA"
+                },
+                {
+                    "id": 40,
+                    "value": "SSANGYOG ",
+                    "label": "SSANGYOG "
+                },
+                {
+                    "id": 10,
+                    "value": "TATA",
+                    "label": "TATA"
+                },
+                {
+                    "id": 27,
+                    "value": "TESLA",
+                    "label": "TESLA"
+                },
+                {
+                    "id": 7,
+                    "value": "TOYOTA",
+                    "label": "TOYOTA"
+                },
+                {
+                    "id": 13,
+                    "value": "VOLKSWAGEN",
+                    "label": "VOLKSWAGEN"
+                },
+                {
+                    "id": 25,
+                    "value": "VOLVO",
+                    "label": "VOLVO"
+                }
+            ]
+        }
+    }
+]
+</pre>
+
+<h4>Body with VideoUpload option</h4>
+              <pre class="response body">
+[
+    {
+        "recipient_id": "pradip",
+        "text": "Can you upload car documents and car video?"
+    },
+    {
+        "recipient_id": "pradip",
+        "custom": {
+            "name": "VideoUpload",
+            "payload": "true"
+        }
+    }
+]
+</pre>
+
+<h4>Body with Calender option</h4>
+              <pre class="response body">
+[
+    {
+        "recipient_id": "pradip",
+        "text": "What is the validity of your insurance?"
+    },
+    {
+        "recipient_id": "pradip",
+        "custom": {
+            "name": "Calendar",
+            "payload": "true"
+        }
+    }
+]
+</pre>
+      </div>
+    </div>
+  </body>
+</html>

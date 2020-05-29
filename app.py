@@ -15,6 +15,10 @@ def hello_docs():
 def send_recieve():
     return render_template('send_and_recieve_message.html')
 
+@app.route("/send_recieve_examples")
+def send_recieve_examples():
+    return render_template('send_and_recieve_message_examples.html')
+
 @app.route("/health")
 def health():
     return render_template('check_health_of_bot.html')
@@ -26,6 +30,10 @@ def insurance_ref():
 @app.route("/insurance_data")
 def insurance_data():
     return render_template('get_result_of_parsed_insurance_document.html')
+
+@app.route("/insurance_data_error")
+def insurance_data_error():
+    return render_template('get_error_result_of_parsed_insurance_document.html')
 
 
 if __name__ == '__main__':
