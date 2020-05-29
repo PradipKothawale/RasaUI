@@ -7,5 +7,26 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
+@app.route("/docs")
+def hello_docs():
+    return render_template('index_doc.html')
+
+@app.route("/send_recieve")
+def send_recieve():
+    return render_template('send_and_recieve_message.html')
+
+@app.route("/health")
+def health():
+    return render_template('check_health_of_bot.html')
+
+@app.route("/insurance_ref")
+def insurance_ref():
+    return render_template('parse_insurance_document_and_get_reference.html')
+
+@app.route("/insurance_data")
+def insurance_data():
+    return render_template('get_result_of_parsed_insurance_document.html')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5002)

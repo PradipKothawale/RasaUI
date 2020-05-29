@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Parsed Insurance Document Data API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Get Parsed Insurance Document Data API</h1>
+
+      <div class="article">
+        <h3>GET /parser/doc/insurance/&lt;ID return by the POST API to send
+the doc of parsing&gt</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">X-DOC-PARSER-VERSION: 1.0</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET http://52.160.69.237:80/parser/doc/insurance/789c45af-a4a5-4a87-9c4c-00b453dddca3</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 29 May 2020 09:14:04 GMT
+</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">
+{
+    "state": {
+        "code": "FINISHED",
+        "name": "FINISHED"
+    },
+    "json": {
+        "policy_no": "17090031200100001583",
+        "customer_id": "PO79491070 (PAN No :NA)",
+        "registration_no": "KA-03-HM-9869",
+        "vehical_make": "HONDA/ACTIVA",
+        "vehical_year_of_manufacture": "2012",
+        "vehical_chasisno": "ME4JC448CC8862965/JC44E1973907",
+        "vehical_fuel": "PETROL",
+        "vehical_cublic_capacity": "109cc",
+        "vehical_bodytype": "Metal/",
+        "vehical_variant": "DLX",
+        "idv_value": "17393"
+    }
+}
+</pre>
+      </div>
+    </div>
+  </body>
+</html>
