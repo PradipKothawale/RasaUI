@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bot API Documentation</title>
-  <meta charset="utf-8">
-  <style>
-    
+  <head>
+    <title>Get Authetication Token API</title>
+    <meta charset="utf-8">
+    <style>
+      
 body {
   font-family: Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -39,7 +39,7 @@ pre {
 
 td.required .name:after {
   float: right;
-  content: &quot;required&quot;;
+  content: "required";
   font-weight: normal;
   color: #F08080;
 }
@@ -102,41 +102,46 @@ table th, table td {
   text-align: left;
 }
 
-  </style>
-</head>
-<body>
-<div class="container">
-  <h1>Bot API Documentation</h1>
-  
-  <div class="article">
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Get Authetication Token API</h1>
 
-    <ul>
-      <li>
-        <a href="{{ url_for('auth_token') }}">Get Authetication Token</a>
-      </li>
-      <li>
-        <a href="{{ url_for('auth_token_error') }}">Give error for getting Authetication Token</a>
-      </li>
-      <li>
-        <a href="{{ url_for('send_receive') }}">Send and Receive a Message</a>
-      </li>
-      <li>
-        <a href="{{ url_for('send_receive_examples') }}">Send and Receive a Message Examples</a>
-      </li>
-      <li>
-        <a href="{{ url_for('health') }}">Check Health of Bot</a>
-      </li>
-      <li>
-        <a href="{{ url_for('insurance_ref') }}">Parse Insurance Document and Get Reference</a>
-      </li>
-      <li>
-        <a href="{{ url_for('insurance_data') }}">Get Result of Parsed Insurance Document</a>
-      </li>
-      <li>
-        <a href="{{ url_for('insurance_data_error') }}">Get Error Result of Parsed Insurance Document</a>
-      </li>
-    </ul>
-  </div>
-</div>
-</body>
+      <div class="article">
+        <h3>POST /webhooks/chatroom/bot_auth</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST https://new-stage.bidwheelz.com:5005/webhooks/chatroom/bot_auth</pre>
+
+          <h4>Body</h4>
+            <pre class="request headers">{
+	"sender": "pradip1"
+}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json
+Connection: keep-alive
+Keep-Alive: 5
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 220</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+    "bot_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTEyNjA1MTgsInNlbmRlcl9pZCI6InByYWRpcDEiLCJyb2xlIjoidXNlciIsImV4cCI6MTU5MTM0NjkxOH0.KAqOjBT96kHBPIQ6EX0MNN6J6w-T7bLztcwQqaJLH0c"
+}</pre>
+      </div>
+    </div>
+  </body>
 </html>

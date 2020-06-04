@@ -35,6 +35,13 @@ def insurance_data():
 def insurance_data_error():
     return render_template('get_error_result_of_parsed_insurance_document.html')
 
+@app.route("/auth_token")
+def auth_token():
+    return render_template('get_auth_token.html')
+
+@app.route("/auth_token_error")
+def auth_token_error():
+    return render_template('get_error_result_of_auth_token.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5002)

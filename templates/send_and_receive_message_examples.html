@@ -122,7 +122,7 @@ table th, table td {
           <pre class="request route highlight">POST https://new-stage.bidwheelz.com:5005/webhooks/chatroom/webhook</pre>
 
           <h4>Body</h4>
-            <pre class="request headers">sender: pradip
+            <pre class="request headers">sender: pradip1
 message: &lt;message&gt </pre>
 
 
@@ -147,7 +147,15 @@ Content-Length: 220</pre>
         "recipient_id": "pradip",
         "custom": {
             "name": "Document",
-            "payload": "true"
+            "payload": {
+                "url": "https://rasademo.s3.amazonaws.com/",
+                "fields": {
+                    "key": "pradip_service_bill",
+                    "AWSAccessKeyId": "XzvD/14aXjKUJLHh6rtVQjxVpXKx6hk3UWfUwmJR",
+                    "policy": "eyJleHBpcmF0aW9uIjogIjIwMjAtMDYtMDRUMTA6MDM6MjFaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAicmFzYWRlbW8ifSwgeyJrZXkiOiAicHJhZGlwMV9zZXJ2aWNlX2JpbGwifV19",
+                    "signature": "euDQvd8L6SuMLOIxkFh9WfMhiWw="
+                }
+            }
         }
     }
 ]
@@ -377,7 +385,15 @@ Content-Length: 220</pre>
         "recipient_id": "pradip",
         "custom": {
             "name": "VideoUpload",
-            "payload": "true"
+            "payload": {
+                "url": "https://rasademo.s3.amazonaws.com/",
+                "fields": {
+                    "key": "pradip_car_video",
+                    "AWSAccessKeyId": "XzvD/14aXjKUJLHh6rtVQjxVpXKx6hk3UWfUwmJR",
+                    "policy": "eyJleHBpcmF0aW9uIjogIjIwMjAtMDYtMDRUMTA6MDM6MjFaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAicmFzYWRlbW8ifSwgeyJrZXkiOiAicHJhZGlwMV9zZXJ2aWNlX2JpbGwifV19",
+                    "signature": "euDQvd8L6SuMLOIxkFh9WfMhiWw="
+                }
+            }
         }
     }
 ]
