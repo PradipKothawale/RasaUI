@@ -43,5 +43,9 @@ def auth_token():
 def auth_token_error():
     return render_template('get_error_result_of_auth_token.html')
 
+@app.route("/auth_token_error_missing")
+def auth_token_error_missing():
+    return render_template('get_error_missing_token.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5002)
